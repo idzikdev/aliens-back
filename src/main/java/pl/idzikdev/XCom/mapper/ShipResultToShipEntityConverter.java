@@ -26,6 +26,8 @@ public class ShipResultToShipEntityConverter {
         output.setDamageCapacity(input.getDamageCapacity());
         output.setDownedPoints(input.getDownedPoints());
         output.setDestroyedPoints(input.getDestroyedPoints());
+        output.setEscapeTime(input.getEscapeTime());
+        output.setFiringInterval(input.getFiringInterval());
 
         switch (input.getName()){
             case "abductor":{

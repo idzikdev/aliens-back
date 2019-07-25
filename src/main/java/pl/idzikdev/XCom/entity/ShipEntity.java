@@ -36,6 +36,10 @@ public class ShipEntity {
     int downedPoints;
     @Column(name = "destroyedpoints")
     int destroyedPoints;
+    @Column(name = "escapetime")
+    int escapeTime;
+    @Column(name = "firinginterval")
+    int firingInterval;
     @Column(name = "jpg0")
     String jpg0;
     @Column(name = "jpg1")
