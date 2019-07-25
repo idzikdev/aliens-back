@@ -3,10 +3,10 @@ package pl.idzikdev.XCom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import pl.idzikdev.XCom.entity.AlienEntity;
-import pl.idzikdev.XCom.entity.ShipEntity;
 import pl.idzikdev.XCom.repository.AlienRepository;
 import pl.idzikdev.XCom.repository.ShipRepository;
+import pl.idzikdev.XCom.tools.AlienToDos;
+
 
 @Component
 public class Init implements CommandLineRunner {
@@ -14,6 +14,9 @@ public class Init implements CommandLineRunner {
     AlienRepository alienRepository;
     @Autowired
     ShipRepository shipRepository;
+
+
+
 
     @Override
     public void run(String... args) throws Exception {
@@ -35,5 +38,10 @@ public class Init implements CommandLineRunner {
 //                .jpg0("small-scout-0").jpg1("small-scout-1").jpg2("small-scout-2").jpg3("small-scout-2")
 //                .build();
 //        shipRepository.save(shipEntity0);
+//        for (int i = 0; i < 100; i++) {
+//            System.out.println(AlienToDos.drawNumber(2,2));
+//
+//        }
+
     }
 }
