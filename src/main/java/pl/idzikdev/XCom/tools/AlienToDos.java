@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.idzikdev.XCom.entity.AlienEntity;
 import pl.idzikdev.XCom.repository.AlienRepository;
-import pl.idzikdev.XCom.stats.*;
+import pl.idzikdev.XCom.stats.aliens.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package pl.idzikdev.XCom.stats;
+package pl.idzikdev.XCom.stats.aliens;
 
 public class FloaterRaceStats {
     public static final int TIME_UNITS_MIN=50;

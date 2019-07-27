@@ -5,7 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import pl.idzikdev.XCom.repository.AlienRepository;
 import pl.idzikdev.XCom.repository.ShipRepository;
-import pl.idzikdev.XCom.tools.AlienToDos;
+import pl.idzikdev.XCom.tools.SoldierToDos;
 
 
 @Component
@@ -42,6 +42,7 @@ public class Init implements CommandLineRunner {
 //            System.out.println(AlienToDos.drawNumber(2,2));
 //
 //        }
+        SoldierToDos.fillAmericanNames();
 
     }
 }

@@ -8,6 +8,8 @@ public class AlienConstans {
     public static final String SHIP_IMAGES="/ships/images/v1";
     public static final String RANK_IMAGES="/ranks/images/v1";
     public static final String ARMOUR_IMAGES="/armours/images/v1";
-    public static final String TOOLS_V1="/tools/add/alien/v1";
+    public static final String ALIEN_TOOLS_V1="/tools/add/alien/v1";
+    public static final String SHIP_TOOLS_V1="/tools/add/ship/v1";
+    public static final String SOLDIER_TOOLS_V1="/tools/add/soldier/v1";
 }
 

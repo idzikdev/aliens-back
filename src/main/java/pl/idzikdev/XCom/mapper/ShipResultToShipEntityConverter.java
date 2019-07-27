@@ -15,10 +15,29 @@ public class ShipResultToShipEntityConverter {
             output.setName(input.getName().toLowerCase());
         }
         else output.setName("large scout");
-        if (sizes.contains(input.getSize().toLowerCase())){
-            output.setSize(input.getSize().toLowerCase());
+        switch (input.getName()){
+            case "small scout":{
+                output.setSize("very small");
+                break;
+            }
+            case "medium scout": case "large scout":{
+                output.setSize("small");
+                break;
+            }
+            case "abductor": case "harvester":{
+                output.setSize("medium");
+                break;
+            }
+            case "terror ship": case "supply ship":{
+                output.setSize("large");
+                break;
+            }
+            case "battleship":{
+                output.setSize("very large");
+                break;
+            }
+            default:output.setSize("small");
         }
-        else output.setSize("small");
         output.setMaxSpeed(input.getMaxSpeed());
         output.setWeaponPower(input.getWeaponPower());
         output.setWeaponRangeKm(input.getWeaponRangeKm());

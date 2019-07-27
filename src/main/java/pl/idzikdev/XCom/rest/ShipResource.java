@@ -6,7 +6,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.idzikdev.XCom.entity.ShipEntity;
-import pl.idzikdev.XCom.mapper.AlienResultToAlienEntityConverter;
 import pl.idzikdev.XCom.mapper.ShipResultToShipEntityConverter;
 import pl.idzikdev.XCom.repository.ShipRepository;
 

@@ -9,7 +9,7 @@ import pl.idzikdev.XCom.repository.AlienRepository;
 import pl.idzikdev.XCom.tools.AlienToDos;
 
 @RestController
-@RequestMapping(AlienConstans.TOOLS_V1)
+@RequestMapping(AlienConstans.ALIEN_TOOLS_V1)
 @CrossOrigin
 public class AlienTools {
     @Autowired
@@ -19,7 +19,7 @@ public class AlienTools {
     AlienRepository alienRepository;
 
     @RequestMapping(path = "", method = RequestMethod.POST)
-    public ResponseEntity<AlienEntity> addAlienRest(
+    public ResponseEntity<AlienEntity> addRandomAlien(
             @RequestParam String race,
             @RequestParam String rank
     ) {

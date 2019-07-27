@@ -1,6 +1,7 @@
 package pl.idzikdev.XCom.mapper;
 
 import pl.idzikdev.XCom.entity.AlienEntity;
+import pl.idzikdev.XCom.tools.AlienToDos;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,18 +9,73 @@ import java.util.List;
 
 public class AlienResultToAlienEntityConverter {
     public static AlienEntity convert(AlienEntity input,AlienEntity output){
-        List<String> ranks=new ArrayList<>(Arrays.asList("soldier","medic","engineer","navigator","terrorist","leader","commander"));
+//        List<String> ranks=new ArrayList<>(Arrays.asList("soldier","medic","engineer","navigator","terrorist","leader","commander"));
         List<String> breeds=new ArrayList<>(Arrays.asList("celatid","chryssalid","cyberdisc",
                 "ethereal","floater","muton","reaper","sectoid","sectopod","silacoid",
                 "snakeman","zombie"));
+        List<String> ranksOfEthereal=new ArrayList<>(Arrays.asList(
+                "soldier","leader","commander"
+        ));
+        List<String> ranksOfFloater=new ArrayList<>(Arrays.asList(
+                "soldier","medic","engineer","navigator","leader","commander"
+        ));
+        List<String> ranksOfMuton=new ArrayList<>(Arrays.asList(
+                "soldier","leader","commander"
+        ));
+        List<String> ranksOfSectoid=new ArrayList<>(Arrays.asList(
+                "soldier","medic","engineer","navigator","leader","commander"
+        ));
+        List<String> ranksOfSnakeman=new ArrayList<>(Arrays.asList(
+                "soldier","engineer","navigator","leader","commander"
+        ));
         if (breeds.contains(input.getBreed().toLowerCase())){
             output.setBreed(input.getBreed().toLowerCase());
         }
         else output.setBreed("sectoid");
-        if (ranks.contains(input.getRank().toLowerCase())){
-            output.setRank(input.getRank().toLowerCase());
+        switch (output.getBreed()){
+            case "celatid": case "chryssalid": case "cyberdisc":
+            case "reaper": case "sectopod": case "silacoid":
+            case "zombie": {
+                output.setRank("terrorist");
+                break;
+            }
+            case "ethereal": {
+                if (ranksOfEthereal.contains(input.getRank().toLowerCase())){
+                    output.setRank(input.getRank().toLowerCase());
+                }
+                else output.setRank(ranksOfEthereal.get(AlienToDos.drawNumber(0,ranksOfEthereal.size()-1)));
+                break;
+            }
+            case "floater": {
+                if (ranksOfFloater.contains(input.getRank().toLowerCase())){
+                    output.setRank(input.getRank().toLowerCase());
+                }
+                else output.setRank(ranksOfFloater.get(AlienToDos.drawNumber(0,ranksOfFloater.size()-1)));
+                break;
+            }
+            case "muton": {
+                if (ranksOfMuton.contains(input.getRank().toLowerCase())){
+                    output.setRank(input.getRank().toLowerCase());
+                }
+                else output.setRank(ranksOfMuton.get(AlienToDos.drawNumber(0,ranksOfMuton.size()-1)));
+                break;
+            }
+            case "sectoid": {
+                if (ranksOfSectoid.contains(input.getRank().toLowerCase())){
+                    output.setRank(input.getRank().toLowerCase());
+                }
+                else output.setRank(ranksOfSectoid.get(AlienToDos.drawNumber(0,ranksOfSectoid.size()-1)));
+                break;
+            }
+            case "snakeman": {
+                if (ranksOfSnakeman.contains(input.getRank().toLowerCase())){
+                    output.setRank(input.getRank().toLowerCase());
+                }
+                else output.setRank(ranksOfSnakeman.get(AlienToDos.drawNumber(0,ranksOfSnakeman.size()-1)));
+                break;
+            }
         }
-        else output.setRank("soldier");
+
         output.setTimeUnits(input.getTimeUnits());
         output.setHealth(input.getHealth());
         output.setEnergy(input.getEnergy());
