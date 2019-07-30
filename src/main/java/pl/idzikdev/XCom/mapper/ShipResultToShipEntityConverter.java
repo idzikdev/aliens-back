@@ -105,7 +105,6 @@ public class ShipResultToShipEntityConverter {
                 output.setJpg3("terror-ship-3");
             }
         }
-        System.out.println(output);
         return output;
     }
 }
