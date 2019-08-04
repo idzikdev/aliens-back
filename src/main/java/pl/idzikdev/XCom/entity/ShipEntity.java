@@ -1,11 +1,14 @@
 package pl.idzikdev.XCom.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -18,6 +21,15 @@ public class ShipEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     int id;
+    @JsonIgnore
+    @OneToMany(mappedBy = "ship",
+    cascade = {
+            CascadeType.PERSIST,
+            CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.REFRESH
+    })
+    private List<AlienEntity> alienEntities=new ArrayList<>();
     @Column(name = "size")
     String size;
     @Column(name = "name")
@@ -48,4 +60,7 @@ public class ShipEntity {
     String jpg2;
     @Column(name = "jpg3")
     String jpg3;
+    public void addAlienToList(AlienEntity alienEntity){
+        alienEntities.add(alienEntity);
+    }
 }

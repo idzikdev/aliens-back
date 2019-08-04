@@ -4,10 +4,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.idzikdev.XCom.rest.AlienConstans;
 
 import java.io.IOException;
@@ -17,51 +14,31 @@ import java.io.IOException;
 @CrossOrigin
 public class ArmourImageResource {
 
-    @RequestMapping(value = "/no-armour", method = RequestMethod.GET,
+    @RequestMapping(value = "/{armour}", method = RequestMethod.GET,
             produces = MediaType.IMAGE_GIF_VALUE)
-    public ResponseEntity<InputStreamResource> getNoArmour() throws IOException {
-
-        ClassPathResource imgFile = new ClassPathResource("static/armours/no-armour.gif");
-
+    public ResponseEntity<InputStreamResource> getSoldierArmour(
+            @PathVariable String armour) throws IOException {
+        ClassPathResource imgFile;
+        switch (armour) {
+            case "personal-armour": {
+                imgFile = new ClassPathResource("static/armours/personal-armour.gif");
+                break;
+            }
+            case "power-suit": {
+                imgFile = new ClassPathResource("static/armours/power-suit.gif");
+                break;
+            }
+            case "flying-suit": {
+                imgFile = new ClassPathResource("static/armours/flying-suit.gif");
+                break;
+            }
+            default:
+                imgFile = new ClassPathResource("static/armours/no-armour.gif");
+        }
         return ResponseEntity
                 .ok()
                 .contentType(MediaType.IMAGE_GIF)
                 .body(new InputStreamResource(imgFile.getInputStream()));
     }
 
-    @RequestMapping(value = "/personal-armour", method = RequestMethod.GET,
-            produces = MediaType.IMAGE_GIF_VALUE)
-    public ResponseEntity<InputStreamResource> getPersonalArmour() throws IOException {
-
-        ClassPathResource imgFile = new ClassPathResource("static/armours/personal-armour.gif");
-
-        return ResponseEntity
-                .ok()
-                .contentType(MediaType.IMAGE_GIF)
-                .body(new InputStreamResource(imgFile.getInputStream()));
-    }
-
-    @RequestMapping(value = "/power-suit", method = RequestMethod.GET,
-            produces = MediaType.IMAGE_GIF_VALUE)
-    public ResponseEntity<InputStreamResource> getPowerSuit() throws IOException {
-
-        ClassPathResource imgFile = new ClassPathResource("static/armours/power-suit.gif");
-
-        return ResponseEntity
-                .ok()
-                .contentType(MediaType.IMAGE_GIF)
-                .body(new InputStreamResource(imgFile.getInputStream()));
-    }
-
-    @RequestMapping(value = "/flying-suit", method = RequestMethod.GET,
-            produces = MediaType.IMAGE_GIF_VALUE)
-    public ResponseEntity<InputStreamResource> getFlyingSuit() throws IOException {
-
-        ClassPathResource imgFile = new ClassPathResource("static/armours/flying-suit.gif");
-
-        return ResponseEntity
-                .ok()
-                .contentType(MediaType.IMAGE_GIF)
-                .body(new InputStreamResource(imgFile.getInputStream()));
-    }
 }

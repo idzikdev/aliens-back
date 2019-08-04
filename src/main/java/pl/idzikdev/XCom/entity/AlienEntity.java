@@ -16,6 +16,14 @@ public class AlienEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     int id;
+    @ManyToOne(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.REFRESH
+    })
+    @JoinColumn(name = "idship")
+    private ShipEntity ship;
     @Column(name = "breed")
     String breed;
     @Column(name = "rank")

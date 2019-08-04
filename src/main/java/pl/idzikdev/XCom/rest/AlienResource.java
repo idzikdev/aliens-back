@@ -28,9 +28,9 @@ public class AlienResource {
 
     @RequestMapping(path = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<AlienEntity> getAlienById(
-            @PathVariable Integer id
+            @PathVariable String id
     ) {
-        Optional<AlienEntity> alienEntityOptional = alienRepository.findById(id);
+        Optional<AlienEntity> alienEntityOptional = alienRepository.findById(Integer.valueOf(id));
         if (alienEntityOptional.isPresent()) return new ResponseEntity<>(alienEntityOptional.get(), HttpStatus.OK);
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
@@ -52,7 +52,10 @@ public class AlienResource {
             return new ResponseEntity<>(HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        //TODO a co z podmianą statków??
+        //TODO niech puty zwracają zmienioną klasę
     }
+
 
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<AlienEntity> deleteAlien(

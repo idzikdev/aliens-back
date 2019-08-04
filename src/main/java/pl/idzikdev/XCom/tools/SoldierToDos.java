@@ -277,6 +277,7 @@ public class SoldierToDos {
                 break;
             }
         }
+        //todo a co jeśli podamy rangę, która nie istnieje? poprawić!
         return soldierEntity;
     }
 }
