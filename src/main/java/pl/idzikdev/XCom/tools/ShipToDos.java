@@ -39,10 +39,8 @@ public class ShipToDos {
                 shipEntity = ShipToDos.addSupplyship();
                 break;
             }
-            case "terrorship": {
+            default:
                 shipEntity = ShipToDos.addTerrorship();
-                break;
-            }
         }
         return shipEntity;
     }

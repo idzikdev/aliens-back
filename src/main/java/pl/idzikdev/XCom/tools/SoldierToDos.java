@@ -252,10 +252,6 @@ public class SoldierToDos {
         SoldierEntity soldierEntity=new SoldierEntity();
 
         switch (rank){
-            case "rookie":{
-                soldierEntity=addRookie();
-                break;
-            }
             case "squaddie":{
                 soldierEntity=addSquaddie();
                 break;
@@ -276,8 +272,8 @@ public class SoldierToDos {
                 soldierEntity=addCommander();
                 break;
             }
+            default:soldierEntity=addRookie();
         }
-        //todo a co jeśli podamy rangę, która nie istnieje? poprawić!
         return soldierEntity;
     }
 }

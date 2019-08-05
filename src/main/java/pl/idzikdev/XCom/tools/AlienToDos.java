@@ -69,10 +69,8 @@ public class AlienToDos {
                 alienEntity=AlienToDos.addSnakeman(rank);
                 break;
             }
-            case "zombie":{
+            default:
                 alienEntity=AlienToDos.addZombie(rank);
-                break;
-            }
         }
         return alienEntity;
     }

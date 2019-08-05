@@ -52,6 +52,8 @@ public class AlienResource {
             return new ResponseEntity<>(HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+
         //TODO a co z podmianą statków??
         //TODO niech puty zwracają zmienioną klasę
     }
