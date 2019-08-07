@@ -65,4 +65,10 @@ public class CraftResource {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @RequestMapping(path = "",method = RequestMethod.DELETE)
+    public ResponseEntity<Void> deleteAllCraft(){
+        craftRepository.deleteAll();
+        return new ResponseEntity(HttpStatus.OK);
+    }
 }

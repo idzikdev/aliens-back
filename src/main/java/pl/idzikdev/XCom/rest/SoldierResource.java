@@ -64,4 +64,10 @@ public class SoldierResource {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @RequestMapping(path = "",method = RequestMethod.DELETE)
+    public ResponseEntity<Void> deleteAllSoldiers(){
+        soldierRepository.deleteAll();
+        return new ResponseEntity(HttpStatus.OK);
+    }
 }

@@ -64,4 +64,10 @@ public class ShipResource {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @RequestMapping(path = "",method = RequestMethod.DELETE)
+    public ResponseEntity<Void> deleteAllShips(){
+        shipRepository.deleteAll();
+        return new ResponseEntity(HttpStatus.OK);
+    }
 }

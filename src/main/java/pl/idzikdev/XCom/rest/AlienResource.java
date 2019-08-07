@@ -69,4 +69,10 @@ public class AlienResource {
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
+    @RequestMapping(path = "",method = RequestMethod.DELETE)
+    public ResponseEntity<Void> deleteAllAliens(){
+        alienRepository.deleteAll();
+        return new ResponseEntity(HttpStatus.OK);
+    }
 }
