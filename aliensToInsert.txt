@@ -1,0 +1,4 @@
+sectoid,soldier
+muton,engineer
+reaper,soldier
+zombie,soldier
