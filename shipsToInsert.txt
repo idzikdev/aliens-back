@@ -1,0 +1,5 @@
+supply ship
+small scout
+terror ship
+harvester
+battleship
