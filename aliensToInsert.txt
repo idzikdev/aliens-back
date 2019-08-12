@@ -1,4 +1,6 @@
-sectoid,soldier
+sectoid,medic
 muton,engineer
-reaper,soldier
-zombie,soldier
+sectopod,terrorist
+ethereal,commander
+snakeman,commander
+snakeman,navigator
