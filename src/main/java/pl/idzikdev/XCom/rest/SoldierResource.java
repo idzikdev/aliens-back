@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.idzikdev.XCom.entity.SoldierEntity;
 import pl.idzikdev.XCom.mapper.SoldierResultToSoldierEntityConverter;
 import pl.idzikdev.XCom.repository.SoldierRepository;
+import pl.idzikdev.XCom.tools.SoldierToDos;
 
 
 import java.util.List;
@@ -68,6 +69,7 @@ public class SoldierResource {
     @RequestMapping(path = "",method = RequestMethod.DELETE)
     public ResponseEntity<Void> deleteAllSoldiers(){
         soldierRepository.deleteAll();
+        SoldierToDos.fillAmericanNames();
         return new ResponseEntity(HttpStatus.OK);
     }
 }
