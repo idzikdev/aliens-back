@@ -33,31 +33,31 @@ public class SoldierToDos {
         String result="NoName";
         int nameIndex;
         switch (nationality){
-            case "american":{
+            case "us":{
                 nameIndex = drawNumber(0, americanSetOfNames.size() - 1);
                 result = americanSetOfNames.get(nameIndex);
                 americanSetOfNames.remove(nameIndex);
                 break;
             }
-            case "british":{
+            case "gb":{
                 nameIndex = drawNumber(0, britishSetOfNames.size() - 1);
                 result = britishSetOfNames.get(nameIndex);
                 britishSetOfNames.remove(nameIndex);
                 break;
             }
-            case "french":{
+            case "fr":{
                 nameIndex = drawNumber(0, frenchSetOfNames.size() - 1);
                 result = frenchSetOfNames.get(nameIndex);
                 frenchSetOfNames.remove(nameIndex);
                 break;
             }
-            case "german":{
+            case "de":{
                 nameIndex = drawNumber(0, germanSetOfNames.size() - 1);
                 result = germanSetOfNames.get(nameIndex);
                 germanSetOfNames.remove(nameIndex);
                 break;
             }
-            case "japanese":{
+            case "jp":{
                 nameIndex = drawNumber(0, japaneseSetOfNames.size() - 1);
                 result = japaneseSetOfNames.get(nameIndex);
                 japaneseSetOfNames.remove(nameIndex);
@@ -256,7 +256,7 @@ public class SoldierToDos {
         String picture = "no-armour";
 
         SoldierEntity soldierEntity = SoldierEntity.builder()
-                .name(name).rank(myRank).timeUnits(timeUnits)
+                .name(name).rank(myRank).timeUnits(timeUnits).nationality(nationality)
                 .energy(energy).health(health).bravery(bravery).reactions(reactions)
                 .firingAccuracy(firingAccuracy).throwingAccuracy(throwingAccuracy)
                 .strength(strength).psiSkill(psiSkill).psiStrength(psiStrength)
@@ -287,7 +287,7 @@ public class SoldierToDos {
         String picture = "no-armour";
 
         SoldierEntity soldierEntity = SoldierEntity.builder()
-                .name(name).rank(myRank).timeUnits(timeUnits)
+                .name(name).rank(myRank).timeUnits(timeUnits).nationality(nationality)
                 .energy(energy).health(health).bravery(bravery).reactions(reactions)
                 .firingAccuracy(firingAccuracy).throwingAccuracy(throwingAccuracy)
                 .strength(strength).psiSkill(psiSkill).psiStrength(psiStrength)
@@ -317,7 +317,7 @@ public class SoldierToDos {
         String picture = "personal armour";
 
         SoldierEntity soldierEntity = SoldierEntity.builder()
-                .name(name).rank(myRank).timeUnits(timeUnits)
+                .name(name).rank(myRank).timeUnits(timeUnits).nationality(nationality)
                 .energy(energy).health(health).bravery(bravery).reactions(reactions)
                 .firingAccuracy(firingAccuracy).throwingAccuracy(throwingAccuracy)
                 .strength(strength).psiSkill(psiSkill).psiStrength(psiStrength)
@@ -347,7 +347,7 @@ public class SoldierToDos {
         String picture = "power suit";
 
         SoldierEntity soldierEntity = SoldierEntity.builder()
-                .name(name).rank(myRank).timeUnits(timeUnits)
+                .name(name).rank(myRank).timeUnits(timeUnits).nationality(nationality)
                 .energy(energy).health(health).bravery(bravery).reactions(reactions)
                 .firingAccuracy(firingAccuracy).throwingAccuracy(throwingAccuracy)
                 .strength(strength).psiSkill(psiSkill).psiStrength(psiStrength)
@@ -377,7 +377,7 @@ public class SoldierToDos {
         String picture = "flying suit";
 
         SoldierEntity soldierEntity = SoldierEntity.builder()
-                .name(name).rank(myRank).timeUnits(timeUnits)
+                .name(name).rank(myRank).timeUnits(timeUnits).nationality(nationality)
                 .energy(energy).health(health).bravery(bravery).reactions(reactions)
                 .firingAccuracy(firingAccuracy).throwingAccuracy(throwingAccuracy)
                 .strength(strength).psiSkill(psiSkill).psiStrength(psiStrength)
@@ -407,7 +407,7 @@ public class SoldierToDos {
         String picture = "flying suit";
 
         SoldierEntity soldierEntity = SoldierEntity.builder()
-                .name(name).rank(myRank).timeUnits(timeUnits)
+                .name(name).rank(myRank).timeUnits(timeUnits).nationality(nationality)
                 .energy(energy).health(health).bravery(bravery).reactions(reactions)
                 .firingAccuracy(firingAccuracy).throwingAccuracy(throwingAccuracy)
                 .strength(strength).psiSkill(psiSkill).psiStrength(psiStrength)

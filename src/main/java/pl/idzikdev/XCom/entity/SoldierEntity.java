@@ -22,6 +22,8 @@ public class SoldierEntity {
     String rank;
     @Column(name = "name")
     String name;
+    @Column (name = "nationality")
+    String nationality;
     @Column(name = "timeunits")
     int timeUnits;
     @Column(name = "energy")
