@@ -23,7 +23,9 @@ public class SoldierTools {
     public ResponseEntity<SoldierEntity> addSoldierByRank(
             @RequestParam String rank
     ) {
-        SoldierEntity soldierEntity = SoldierToDos.addRandomSoldier(rank);
+        String names[]={"american","british","french","german","japanese","russian"};
+        int number=SoldierToDos.drawNumber(0,names.length-1);
+        SoldierEntity soldierEntity = SoldierToDos.addRandomSoldier(rank,names[number]);
         SoldierEntity result= SoldierResultToSoldierEntityConverter.convert(soldierEntity, soldierEntity);
         return new ResponseEntity<>(soldierRepository.save(result), HttpStatus.OK);
     }

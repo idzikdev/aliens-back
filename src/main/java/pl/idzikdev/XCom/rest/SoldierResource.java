@@ -69,7 +69,12 @@ public class SoldierResource {
     @RequestMapping(path = "",method = RequestMethod.DELETE)
     public ResponseEntity<Void> deleteAllSoldiers(){
         soldierRepository.deleteAll();
-        SoldierToDos.fillAmericanNames();
+        SoldierToDos.deleteNames();
+        String names[]={"american","british","french","german","japanese","russian"};
+        for (String name:names
+        ) {
+            SoldierToDos.fillNames(name);
+        }
         return new ResponseEntity(HttpStatus.OK);
     }
 }

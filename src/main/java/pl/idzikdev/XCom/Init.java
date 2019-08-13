@@ -42,7 +42,10 @@ public class Init implements CommandLineRunner {
 //            System.out.println(AlienToDos.drawNumber(2,2));
 //
 //        }
-        SoldierToDos.fillAmericanNames();
-
+        String names[]={"american","british","french","german","japanese","russian"};
+        for (String name:names
+             ) {
+            SoldierToDos.fillNames(name);
+        }
     }
 }
