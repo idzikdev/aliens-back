@@ -1,8 +1,7 @@
 package pl.idzikdev.XCom.mapper;
 
 import pl.idzikdev.XCom.entity.AlienEntity;
-import pl.idzikdev.XCom.tools.AlienToDos;
-
+import pl.idzikdev.XCom.tools.Tools;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -43,39 +42,38 @@ public class AlienResultToAlienEntityConverter {
                 if (ranksOfEthereal.contains(input.getRank().toLowerCase())){
                     output.setRank(input.getRank().toLowerCase());
                 }
-                else output.setRank(ranksOfEthereal.get(AlienToDos.drawNumber(0,ranksOfEthereal.size()-1)));
+                else output.setRank(ranksOfEthereal.get(Tools.drawNumber(0,ranksOfEthereal.size()-1)));
                 break;
             }
             case "floater": {
                 if (ranksOfFloater.contains(input.getRank().toLowerCase())){
                     output.setRank(input.getRank().toLowerCase());
                 }
-                else output.setRank(ranksOfFloater.get(AlienToDos.drawNumber(0,ranksOfFloater.size()-1)));
+                else output.setRank(ranksOfFloater.get(Tools.drawNumber(0,ranksOfFloater.size()-1)));
                 break;
             }
             case "muton": {
                 if (ranksOfMuton.contains(input.getRank().toLowerCase())){
                     output.setRank(input.getRank().toLowerCase());
                 }
-                else output.setRank(ranksOfMuton.get(AlienToDos.drawNumber(0,ranksOfMuton.size()-1)));
+                else output.setRank(ranksOfMuton.get(Tools.drawNumber(0,ranksOfMuton.size()-1)));
                 break;
             }
             case "sectoid": {
                 if (ranksOfSectoid.contains(input.getRank().toLowerCase())){
                     output.setRank(input.getRank().toLowerCase());
                 }
-                else output.setRank(ranksOfSectoid.get(AlienToDos.drawNumber(0,ranksOfSectoid.size()-1)));
+                else output.setRank(ranksOfSectoid.get(Tools.drawNumber(0,ranksOfSectoid.size()-1)));
                 break;
             }
             case "snakeman": {
                 if (ranksOfSnakeman.contains(input.getRank().toLowerCase())){
                     output.setRank(input.getRank().toLowerCase());
                 }
-                else output.setRank(ranksOfSnakeman.get(AlienToDos.drawNumber(0,ranksOfSnakeman.size()-1)));
+                else output.setRank(ranksOfSnakeman.get(Tools.drawNumber(0,ranksOfSnakeman.size()-1)));
                 break;
             }
         }
-
         output.setTimeUnits(input.getTimeUnits());
         output.setHealth(input.getHealth());
         output.setEnergy(input.getEnergy());

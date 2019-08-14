@@ -30,7 +30,7 @@ public class SoldierToDos {
 
 
     public static String selectRandomName(String nationality){
-        String result="NoName";
+        String result;
         int nameIndex;
         switch (nationality){
             case "us":{

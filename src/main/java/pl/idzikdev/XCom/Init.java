@@ -7,6 +7,8 @@ import pl.idzikdev.XCom.repository.AlienRepository;
 import pl.idzikdev.XCom.repository.ShipRepository;
 import pl.idzikdev.XCom.tools.SoldierToDos;
 
+import java.util.Random;
+
 
 @Component
 public class Init implements CommandLineRunner {
@@ -14,9 +16,6 @@ public class Init implements CommandLineRunner {
     AlienRepository alienRepository;
     @Autowired
     ShipRepository shipRepository;
-
-
-
 
     @Override
     public void run(String... args) throws Exception {

@@ -1,5 +1,8 @@
 package pl.idzikdev.XCom.stats.aliens;
 
+import pl.idzikdev.XCom.entity.AlienEntity;
+import pl.idzikdev.XCom.tools.Tools;
+
 public class ZombieRaceStats {
     public static final int TIME_UNITS_MIN=40;
     public static final int TIME_UNITS_MAX=40;
@@ -52,4 +55,66 @@ public class ZombieRaceStats {
     public static final boolean VALID_RANK_TERRORIST=true;
     public static final boolean VALID_RANK_LEADER=false;
     public static final boolean VALID_RANK_COMMANDER=false;
+    private int timeUnits;
+    private int health;
+    private int energy;
+    private int reactions;
+    private int strength;
+    private int bravery;
+    private int firingAccuracy;
+    private int throwingAccuracy;
+    private int psiSkill;
+    private int psiStrength;
+    private int meleeAccuracy;
+    private int armourFront;
+    private int armourLeft;
+    private int armourRight;
+    private int armourRear;
+    private int armourUnder;
+    private int energyRecovery;
+    private int victoryPoints;
+    private int aggression;
+    private int intelligence;
+    private int heightStanding;
+    private int heightKneeling;
+
+    public ZombieRaceStats() {
+        this.timeUnits= Tools.drawNumber(ZombieRaceStats.TIME_UNITS_MIN,ZombieRaceStats.TIME_UNITS_MAX);
+        this.health=Tools.drawNumber(ZombieRaceStats.HEALTH_MIN,ZombieRaceStats.HEALTH_MAX);
+        this.energy=Tools.drawNumber(ZombieRaceStats.ENERGY_MIN,ZombieRaceStats.ENERGY_MAX);
+        this.reactions=Tools.drawNumber(ZombieRaceStats.REACTIONS_MIN,ZombieRaceStats.REACTIONS_MAX);
+        this.strength=Tools.drawNumber(ZombieRaceStats.STRENGTH_MIN,ZombieRaceStats.STRENGTH_MAX);
+        this.bravery=Tools.drawNumber(ZombieRaceStats.BRAVERY_MIN,ZombieRaceStats.BRAVERY_MAX);
+        this.firingAccuracy=Tools.drawNumber(ZombieRaceStats.FIRING_ACCURACY_MIN,ZombieRaceStats.FIRING_ACCURACY_MAX);
+        this.throwingAccuracy=Tools.drawNumber(ZombieRaceStats.THROWING_ACCURACY_MIN,ZombieRaceStats.THROWING_ACCURACY_MAX);
+        this.psiSkill=Tools.drawNumber(ZombieRaceStats.PSI_SKILL_MIN,ZombieRaceStats.PSI_SKILL_MAX);
+        this.psiStrength=Tools.drawNumber(ZombieRaceStats.PSI_STRENGTH_MIN,ZombieRaceStats.PSI_STRENGTH_MAX);
+        this.meleeAccuracy=Tools.drawNumber(ZombieRaceStats.MELEE_ACCURACY_MIN,ZombieRaceStats.MELEE_ACCURACY_MAX);
+        this.armourFront=Tools.drawNumber(ZombieRaceStats.ARMOUR_FRONT_MIN,ZombieRaceStats.ARMOUR_FRONT_MAX);
+        this.armourLeft=Tools.drawNumber(ZombieRaceStats.ARMOUR_LEFT_MIN,ZombieRaceStats.ARMOUR_LEFT_MAX);
+        this.armourRight=Tools.drawNumber(ZombieRaceStats.ARMOUR_RIGHT_MIN,ZombieRaceStats.ARMOUR_RIGHT_MAX);
+        this.armourRear=Tools.drawNumber(ZombieRaceStats.ARMOUR_REAR_MIN,ZombieRaceStats.ARMOUR_REAR_MAX);
+        this.armourUnder=Tools.drawNumber(ZombieRaceStats.ARMOUR_UNDER_MIN,ZombieRaceStats.ARMOUR_UNDER_MAX);
+        this.energyRecovery=Tools.drawNumber(ZombieRaceStats.ENERGY_RECOVERY_MIN,ZombieRaceStats.ENERGY_RECOVERY_MAX);
+        this.victoryPoints=Tools.drawNumber(ZombieRaceStats.VICTORY_POINTS_MIN,ZombieRaceStats.VICTORY_POINTS_MAX);
+        this.aggression=Tools.drawNumber(ZombieRaceStats.AGGRESSION_MIN,ZombieRaceStats.AGGRESSION_MAX);
+        this.intelligence=Tools.drawNumber(ZombieRaceStats.INTELLIGENCE_MIN,ZombieRaceStats.INTELLIGENCE_MAX);
+        this.heightStanding=Tools.drawNumber(ZombieRaceStats.HEIGHT_STANDING_MIN,ZombieRaceStats.HEIGHT_STANDING_MAX);
+        this.heightKneeling=Tools.drawNumber(ZombieRaceStats.HEIGHT_KNEELING_MIN,ZombieRaceStats.HEIGHT_KNEELING_MAX);
+    }
+
+
+    public AlienEntity buildZombieEntity(String breed, String rank) {
+        AlienEntity alienEntity = AlienEntity.builder()
+                .breed(breed)
+                .rank(rank)
+                .timeUnits(timeUnits).health(health).energy(energy).reactions(reactions)
+                .strength(strength).bravery(bravery).firingAccuracy(firingAccuracy).throwingAccuracy(throwingAccuracy)
+                .psiSkill(psiSkill).psiStrength(psiStrength).meleeAccuracy(meleeAccuracy)
+                .armourFront(armourFront).armourLeft(armourLeft).armourRight(armourRight).armourRear(armourRear).armourUnder(armourUnder)
+                .energyRecovery(energyRecovery).victoryPoints(victoryPoints).aggression(aggression).intelligence(intelligence)
+                .heightStanding(heightStanding).heightKneeling(heightKneeling)
+                .build();
+        return alienEntity;
+    }
 }

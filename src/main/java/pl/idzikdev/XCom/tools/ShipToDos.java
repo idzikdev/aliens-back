@@ -9,7 +9,7 @@ import pl.idzikdev.XCom.stats.ships.*;
 public class ShipToDos {
 
     public static ShipEntity addShip(String name) {
-        ShipEntity shipEntity = new ShipEntity();
+        ShipEntity shipEntity;
         switch (name) {
             case "smallscout": {
                 shipEntity = ShipToDos.addSmallScout();

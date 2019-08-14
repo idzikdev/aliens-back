@@ -7,7 +7,7 @@ import pl.idzikdev.XCom.stats.craft.*;
 @Service
 public class CraftToDos {
     public static CraftEntity addCraft(String name) {
-        CraftEntity craftEntity = new CraftEntity();
+        CraftEntity craftEntity;
         switch (name) {
             case "skyranger": {
                 craftEntity = CraftToDos.addSkyranger();

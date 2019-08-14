@@ -6,14 +6,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.idzikdev.XCom.entity.AlienEntity;
 import pl.idzikdev.XCom.repository.AlienRepository;
-import pl.idzikdev.XCom.tools.AlienToDos;
+import pl.idzikdev.XCom.tools.AlienAddingService;
 
 @RestController
 @RequestMapping(AlienConstans.ALIEN_TOOLS_V1)
 @CrossOrigin
 public class AlienTools {
     @Autowired
-    AlienToDos alienToDos;
+    AlienAddingService alienAddingService;
 
     @Autowired
     AlienRepository alienRepository;
@@ -23,7 +23,7 @@ public class AlienTools {
             @RequestParam String race,
             @RequestParam String rank
     ) {
-        AlienEntity alienEntity = AlienToDos.addAlien(race, rank);
+        AlienEntity alienEntity = AlienAddingService.addAlien(race, rank);
         return new ResponseEntity<>(alienRepository.save(alienEntity), HttpStatus.OK);
     }
 

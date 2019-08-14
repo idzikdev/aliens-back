@@ -1,5 +1,10 @@
 package pl.idzikdev.XCom.stats.aliens;
 
+import pl.idzikdev.XCom.entity.AlienEntity;
+import pl.idzikdev.XCom.tools.Tools;
+
+import java.util.Random;
+
 public class CyberdiscRaceStats {
     public static final int TIME_UNITS_MIN=62;
     public static final int TIME_UNITS_MAX=71;
@@ -52,4 +57,65 @@ public class CyberdiscRaceStats {
     public static final boolean VALID_RANK_TERRORIST=true;
     public static final boolean VALID_RANK_LEADER=false;
     public static final boolean VALID_RANK_COMMANDER=false;
+    private int timeUnits;
+    private int health;
+    private int energy;
+    private int reactions;
+    private int strength;
+    private int bravery;
+    private int firingAccuracy;
+    private int throwingAccuracy;
+    private int psiSkill;
+    private int psiStrength;
+    private int meleeAccuracy;
+    private int armourFront;
+    private int armourLeft;
+    private int armourRight;
+    private int armourRear;
+    private int armourUnder;
+    private int energyRecovery;
+    private int victoryPoints;
+    private int aggression;
+    private int intelligence;
+    private int heightStanding;
+    private int heightKneeling;
+   
+    public CyberdiscRaceStats() {
+        this.timeUnits= Tools.drawNumber(CyberdiscRaceStats.TIME_UNITS_MIN,CyberdiscRaceStats.TIME_UNITS_MAX);
+        this.health=Tools.drawNumber(CyberdiscRaceStats.HEALTH_MIN,CyberdiscRaceStats.HEALTH_MAX);
+        this.energy=Tools.drawNumber(CyberdiscRaceStats.ENERGY_MIN,CyberdiscRaceStats.ENERGY_MAX);
+        this.reactions=Tools.drawNumber(CyberdiscRaceStats.REACTIONS_MIN,CyberdiscRaceStats.REACTIONS_MAX);
+        this.strength=Tools.drawNumber(CyberdiscRaceStats.STRENGTH_MIN,CyberdiscRaceStats.STRENGTH_MAX);
+        this.bravery=Tools.drawNumber(CyberdiscRaceStats.BRAVERY_MIN,CyberdiscRaceStats.BRAVERY_MAX);
+        this.firingAccuracy=Tools.drawNumber(CyberdiscRaceStats.FIRING_ACCURACY_MIN,CyberdiscRaceStats.FIRING_ACCURACY_MAX);
+        this.throwingAccuracy=Tools.drawNumber(CyberdiscRaceStats.THROWING_ACCURACY_MIN,CyberdiscRaceStats.THROWING_ACCURACY_MAX);
+        this.psiSkill=Tools.drawNumber(CyberdiscRaceStats.PSI_SKILL_MIN,CyberdiscRaceStats.PSI_SKILL_MAX);
+        this.psiStrength=Tools.drawNumber(CyberdiscRaceStats.PSI_STRENGTH_MIN,CyberdiscRaceStats.PSI_STRENGTH_MAX);
+        this.meleeAccuracy=Tools.drawNumber(CyberdiscRaceStats.MELEE_ACCURACY_MIN,CyberdiscRaceStats.MELEE_ACCURACY_MAX);
+        this.armourFront=Tools.drawNumber(CyberdiscRaceStats.ARMOUR_FRONT_MIN,CyberdiscRaceStats.ARMOUR_FRONT_MAX);
+        this.armourLeft=Tools.drawNumber(CyberdiscRaceStats.ARMOUR_LEFT_MIN,CyberdiscRaceStats.ARMOUR_LEFT_MAX);
+        this.armourRight=Tools.drawNumber(CyberdiscRaceStats.ARMOUR_RIGHT_MIN,CyberdiscRaceStats.ARMOUR_RIGHT_MAX);
+        this.armourRear=Tools.drawNumber(CyberdiscRaceStats.ARMOUR_REAR_MIN,CyberdiscRaceStats.ARMOUR_REAR_MAX);
+        this.armourUnder=Tools.drawNumber(CyberdiscRaceStats.ARMOUR_UNDER_MIN,CyberdiscRaceStats.ARMOUR_UNDER_MAX);
+        this.energyRecovery=Tools.drawNumber(CyberdiscRaceStats.ENERGY_RECOVERY_MIN,CyberdiscRaceStats.ENERGY_RECOVERY_MAX);
+        this.victoryPoints=Tools.drawNumber(CyberdiscRaceStats.VICTORY_POINTS_MIN,CyberdiscRaceStats.VICTORY_POINTS_MAX);
+        this.aggression=Tools.drawNumber(CyberdiscRaceStats.AGGRESSION_MIN,CyberdiscRaceStats.AGGRESSION_MAX);
+        this.intelligence=Tools.drawNumber(CyberdiscRaceStats.INTELLIGENCE_MIN,CyberdiscRaceStats.INTELLIGENCE_MAX);
+        this.heightStanding=Tools.drawNumber(CyberdiscRaceStats.HEIGHT_STANDING_MIN,CyberdiscRaceStats.HEIGHT_STANDING_MAX);
+        this.heightKneeling=Tools.drawNumber(CyberdiscRaceStats.HEIGHT_KNEELING_MIN,CyberdiscRaceStats.HEIGHT_KNEELING_MAX);
+    }
+
+    public AlienEntity buildCyberdiscEntity(String breed, String rank) {
+        AlienEntity alienEntity = AlienEntity.builder()
+                .breed(breed)
+                .rank(rank)
+                .timeUnits(timeUnits).health(health).energy(energy).reactions(reactions)
+                .strength(strength).bravery(bravery).firingAccuracy(firingAccuracy).throwingAccuracy(throwingAccuracy)
+                .psiSkill(psiSkill).psiStrength(psiStrength).meleeAccuracy(meleeAccuracy)
+                .armourFront(armourFront).armourLeft(armourLeft).armourRight(armourRight).armourRear(armourRear).armourUnder(armourUnder)
+                .energyRecovery(energyRecovery).victoryPoints(victoryPoints).aggression(aggression).intelligence(intelligence)
+                .heightStanding(heightStanding).heightKneeling(heightKneeling)
+                .build();
+        return alienEntity;
+    }
 }
