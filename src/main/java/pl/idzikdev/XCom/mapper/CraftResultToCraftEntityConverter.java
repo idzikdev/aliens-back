@@ -52,6 +52,13 @@ public class CraftResultToCraftEntityConverter {
                 break;
             }
         }
+        output.setMaxSpeed(input.getMaxSpeed());
+        output.setAcceleration(input.getAcceleration());
+        output.setFuelCapacity(input.getFuelCapacity());
+        output.setDamageCapacity(input.getDamageCapacity());
+        output.setCargoSpace(input.getCargoSpace());
+        output.setHwpCapacity(input.getHwpCapacity());
+        output.setWeaponPods(input.getWeaponPods());
         return output;
     }
 }
